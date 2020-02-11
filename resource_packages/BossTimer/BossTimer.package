@@ -1,0 +1,11 @@
+mod = [
+	"BossTimer"
+]
+
+package = [
+	"resource_packages/BossTimer/BossTimer"
+]
+
+lua = [
+	"scripts/mods/BossTimer/*"
+]
