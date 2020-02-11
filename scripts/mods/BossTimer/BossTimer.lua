@@ -111,7 +111,7 @@ end)
 
 mod.show_display_kill_message = function(self, text, is_second_line)
 	
-	local font_name = "gw_head_32"
+	local font_name = "gw_head"
 	local font_mtrl = "materials/fonts/" .. font_name
 
 	local w, h = UIResolution()
@@ -212,10 +212,10 @@ mod:hook(DeathSystem, "kill_unit", function(func, self, unit, ...)
 		if mod.bossname[unit] then
 			
 			--visual
-			mod.text = mod.bossname[unit] .. " died after "
+			mod.text = mod.bossname[unit] .. " died after"
 			if math.floor((time_end - mod.start[unit])/60) > 0 then
 				local time_min = math.floor((time_end - mod.start[unit])/60)
-				mod.text = mod.text .. tostring(time_min) .. " minute"
+				mod.text = mod.text .. " " .. tostring(time_min) .. " minute"
 				if time_min > 1 then
 					mod.text = mod.text .. "s"
 				end
