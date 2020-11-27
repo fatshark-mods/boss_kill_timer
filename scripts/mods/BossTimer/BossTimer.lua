@@ -55,7 +55,7 @@ end
 mod.rasknitt = nil
 mod.deathrattler = nil
 
-mod:hook(ScriptWorld, "load_level", function(func, world, level_name, ...)
+mod:hook_safe(LevelTransitionHandler, "load_level", function (self, level_key, ...)
 
 	-- reset all variables when loading level
 	mod.time_start_fighting_naglfahr = nil
@@ -71,14 +71,12 @@ mod:hook(ScriptWorld, "load_level", function(func, world, level_name, ...)
 	mod.rasknitt = nil
 	mod.burb_intro = false
 	
-	mod.is_warcamp_mission = level_name == "warcamp"
+	mod.is_warcamp_mission = level_key == "warcamp"
 	
 	-- no timers should be carried over from earlier games
 	mod.bossname = {}
 
 	mod.start = {}
-	
-	return func(world, level_name, ...)
 end)
 
 
