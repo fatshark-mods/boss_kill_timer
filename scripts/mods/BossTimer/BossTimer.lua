@@ -188,6 +188,8 @@ mod:hook(World, "spawn_unit", function (func, self, unit_name, ...)
 	elseif unit_name == "units/beings/enemies/skaven_stormfiend/chr_skaven_stormfiend_boss" then
 		mod.bossname[unit] = "Deathrattler"
 		mod.deathrattler = unit
+	elseif unit_name == "units/beings/enemies/chaos_sorcerer_boss_drachenfels/chr_chaos_sorcerer_boss_drachenfels" then
+		mod.bossname[unit] = "Nurgloth the Eternal"
 	end
 	
 	return unit
