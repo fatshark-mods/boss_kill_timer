@@ -55,7 +55,8 @@ end
 mod.rasknitt = nil
 mod.deathrattler = nil
 
-mod:hook_safe(LevelTransitionHandler, "load_level", function (self, level_key, ...)
+mod:hook_safe(LevelTransitionHandler, "load_current_level", function (self, ...)
+	level_key = self:get_current_level_key()
 
 	-- reset all variables when loading level
 	mod.time_start_fighting_naglfahr = nil
